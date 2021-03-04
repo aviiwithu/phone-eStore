@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { Switch, Route} from 'react-router-dom'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbar from './Navbar';
+import ProductList from './ProductList';
+import Details from './Details';
+import Cart from './Cart';
+import Default from './Default';
+import Modal from './Modal'
+import ContextReducer from './ContextReducer'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ContextReducer>
+          <Navbar/>
+          <Switch>
+            <Route exact path='/' component={ProductList} />
+            <Route exact path='/details' component={Details} />
+            <Route exact path='/cart' component={Cart} />
+            <Route component={Default} />
+          </Switch>
+            <Modal/>
+      </ContextReducer>
+    </>
   );
 }
 
