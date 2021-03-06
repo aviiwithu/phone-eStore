@@ -5,7 +5,7 @@ import {rootReducer} from './Reducer'
 export const RootContext = createContext();
 
 const ContextReducer = (props) => {
-
+    
     const [state, dispatch] = useReducer(rootReducer, initialState)
 
     return (

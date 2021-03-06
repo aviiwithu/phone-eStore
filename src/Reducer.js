@@ -1,3 +1,4 @@
+
 export const rootReducer=(state,action)=>{
     switch(action.type){
         case "addToCart":
@@ -6,6 +7,8 @@ export const rootReducer=(state,action)=>{
             let tempPay = action.payload;
             tempPay.count =tempPay.count+1;
             tempPay.inCart = true;
+            console.log(tempPay);
+            console.log(action.payload);
             return {
                 ...state,
                 cart:[...state.cart,tempPay],

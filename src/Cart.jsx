@@ -16,7 +16,7 @@ const Cart = () => {
             <Title name="Your" title="Cart" />
             <CartColumns />
             <CartList cart={state.cart} dispatch={dispatch} />
-            <CartTotals value={state} />
+            <CartTotals state={state} dispatch={dispatch} />
             </>
         )
     } else {
